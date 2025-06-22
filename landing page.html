@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitZone - Your Fitness Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0a0f24;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #111731;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #00ff95;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ff95;
+    }
+
+    .btn {
+      background-color: #00ff95;
+      color: #000;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00d181;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background-image: url('https://images.unsplash.com/photo-1599059811073-cd184b926d8f?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h1,
+    .hero p,
+    .hero a {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #00ff95;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .btn.large {
+      padding: 14px 30px;
+      font-size: 1rem;
+    }
+
+    .features {
+      padding: 80px 60px;
+      background-color: #10162e;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #00ff95;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #1a213f;
+      padding: 30px;
+      border-radius: 12px;
+      width: 300px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #1f2950;
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      color: #00ff95;
+    }
+
+    .card p {
+      color: #bbbbbb;
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      text-align: left;
+      margin-top: 15px;
+      line-height: 1.8;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .card ul li::before {
+      content: "✓ ";
+      color: #00ff95;
+    }
+
+    .cta {
+      padding: 80px 60px;
+      background: #0c142d;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      color: #00ff95;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #cccccc;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #0b111f;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🏋️ FitZone</div>
+    <nav>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#join">Join Us</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Login</a>
+  </header>
+
+  <section class="hero">
+    <h1>Train Smart, Live Strong</h1>
+    <p>Your personal fitness companion, designed to track, guide, and transform your health journey.</p>
+    <a href="#plans" class="btn large">Get Started Free</a>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Core Features</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://img.icons8.com/external-flat-juicy-fish/60/ffffff/external-fitness-gym-flat-flat-juicy-fish.png" alt="Workout">
+        <h3>Workout Planner</h3>
+        <p>Custom workout routines tailored to your body type and goals.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/60/apple--v1.png" alt="Diet">
+        <h3>Diet & Nutrition</h3>
+        <p>Smart meal planning and calorie tracking with real-time suggestions.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/60/ffffff/external-ai-technology-flaticons-lineal-color-flat-icons.png" alt="AI Insights">
+        <h3>AI Health Insights</h3>
+        <p>Track progress with AI-powered health analytics and feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans" class="cta">
+    <h2>Choose Your Plan</h2>
+    <p>Join the FitZone revolution and access powerful tools for your fitness goals.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Free Plan</h3>
+        <p><strong>₹0/month</strong></p>
+        <ul>
+          <li>Basic Workout Library</li>
+          <li>Daily Step Tracker</li>
+          <li style="color: #999;">✗ Personalized Diet</li>
+          <li style="color: #999;">✗ AI Insights</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 20px;">Get Started</a>
+      </div>
+
+      <div class="card" style="border: 2px solid #00ff95;">
+        <h3>Pro Plan</h3>
+        <p><strong>₹499/month</strong></p>
+        <ul>
+          <li>All Free Features</li>
+          <li>Personalized Diet Plans</li>
+          <li>AI Health Tracker</li>
+          <li>Progress Reports</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 20px;">Buy Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Elite Plan</h3>
+        <p><strong>₹999/month</strong></p>
+        <ul>
+          <li>All Pro Features</li>
+          <li>Personal Fitness Coach</li>
+          <li>1-on-1 Consultations</li>
+          <li>Early Access to Features</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 20px;">Join Elite</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="join">
+    <p>📧 Email: support@fitzone.ai | 📍 India</p>
+    <p>&copy; 2025 FitZone. All rights reserved.</p>
+  </footer>
+</body>
+</html>
